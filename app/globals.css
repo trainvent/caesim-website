@@ -3,27 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #090a0d;
+  --background-2: #111318;
+  --foreground: #f4efe7;
+  --muted: #b9b1a3;
+  --panel: rgba(19, 21, 27, 0.78);
+  --accent: #f7c66b;
+  --accent-2: #ffdd9c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  min-height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  color: var(--foreground);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(247, 198, 107, 0.2), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(255, 221, 156, 0.1), transparent 20%),
+    linear-gradient(180deg, #0c0d11 0%, var(--background) 45%, var(--background-2) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, black 35%, transparent 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
 }
 
 @layer utilities {
