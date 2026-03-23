@@ -37,6 +37,9 @@ export default function Home() {
             <p className="mt-2 text-sm text-[var(--muted)]">
               Image library trimming for the folders that got out of hand.
             </p>
+            <p className="mt-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+              Not a product
+            </p>
           </div>
           <a
             href="#install"
@@ -203,6 +206,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-10 lg:px-12">
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
+          <p>Caesim is not a product.</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+            <a
+              href="https://next.trainvent.com"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-[var(--foreground)]"
+            >
+              next.trainvent.com
+            </a>
+            <a
+              href="mailto:hello@trainvent.com"
+              className="transition hover:text-[var(--foreground)]"
+            >
+              hello@trainvent.com
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
