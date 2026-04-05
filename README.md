@@ -11,20 +11,16 @@ This project is exported as a static Next.js site and deployed with GitHub Pages
 
 This repository deploys from the `master` branch using the workflow at `.github/workflows/deploy-pages.yml`.
 
-The repo is configured for project Pages mode, so the deployment workflow builds with:
-
-```bash
-PAGES_BASE_PATH=/caesim-website npm run build
-```
-
-That keeps exported routes and asset URLs aligned with the GitHub Pages subpath:
+The repo is configured for the custom domain:
 
 ```text
-https://trainvent.github.io/caesim-website/
+https://caesim.com
 ```
 
-For root-domain or custom-domain hosting, leave `PAGES_BASE_PATH` empty.
+The deployment workflow builds with an empty `PAGES_BASE_PATH`, so exported routes and asset URLs stay rooted at `/`.
+
+`public/CNAME` is included so the exported site keeps the custom domain configuration when deployed to GitHub Pages.
 
 ## Troubleshooting
 
-If a Pages deployment looks like bare HTML with missing styles, check the deployed path configuration first. A mismatch between the hosting path and `PAGES_BASE_PATH` will break the generated CSS and JavaScript URLs.
+If a Pages deployment looks like bare HTML with missing styles, check the deployed path configuration first. A custom domain must build with root asset URLs like `/_next/...`, not `/caesim-website/_next/...`.
