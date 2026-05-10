@@ -24,3 +24,6 @@ The deployment workflow builds with an empty `PAGES_BASE_PATH`, so exported rout
 ## Troubleshooting
 
 If a Pages deployment looks like bare HTML with missing styles, check the deployed path configuration first. A custom domain must build with root asset URLs like `/_next/...`, not `/caesim-website/_next/...`.
+
+## Sources
+Program Readme: https://github.com/trainvent/caesim/blob/main/README.md

@@ -20,10 +20,13 @@ const highlights = [
 ];
 
 const installSteps = [
-  "Install Caesim locally and point it at the folder you want to clean.",
-  "Describe the kind of images that should be cut out of the library.",
+  "Download the prototype release for Debian-based Linux and install it locally.",
+  "Run a dry scan with one of Caesim's supported rules, such as screenshots, duplicates, blurry, dark, landscape, or portrait.",
   'Let Caesim move every match into the "cut" folder for review.',
 ];
+
+const prototypeReleaseUrl =
+  "https://github.com/trainvent/caesim/releases/tag/v0.1.2";
 
 export default function Home() {
   return (
@@ -38,7 +41,7 @@ export default function Home() {
               Image library trimming for the folders that got out of hand.
             </p>
             <p className="mt-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
-              Not a product
+              Prototype available
             </p>
           </div>
           <a
@@ -58,15 +61,24 @@ export default function Home() {
               Trim giant image libraries without sorting them by hand.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
-              Caesim advertises a simple idea: describe the kind of images you
-              want out, then move every match into a separate{" "}
+              Caesim started as a simple advertised idea: describe the kind of
+              images you want out, then move every match into a separate{" "}
               <span className="text-[var(--foreground)]">cut</span> folder.
-              Your gallery gets cleaner, and you still keep a review step.
+              A first prototype is now available for Debian-based Linux, so you
+              can try the local workflow yourself.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
-                href="#install"
+                href={prototypeReleaseUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[#15130f] transition hover:bg-[var(--accent-2)]"
+              >
+                Download prototype
+              </a>
+              <a
+                href="#install"
+                className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:border-[var(--accent)] hover:bg-white/5"
               >
                 See install flow
               </a>
@@ -111,10 +123,11 @@ export default function Home() {
 
                 <div className="mt-5 space-y-4 font-mono text-sm text-[#d7d7d9]">
                   <div className="rounded-2xl bg-[#0d0e12] p-4 text-[var(--accent-2)]">
-                    caesim cut ./photo-library
+                    caesim cut ./photo-library --rule screenshots --dry-run
                   </div>
                   <div className="rounded-2xl border border-white/10 p-4">
-                    property: screenshots, duplicates, low-light misses
+                    supported rules: screenshots, duplicates, blurry, dark,
+                    landscape, portrait
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div className="rounded-2xl border border-white/10 p-4">
@@ -171,23 +184,40 @@ export default function Home() {
         <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--accent-2)]">
-              Installation concept
+              Prototype download
             </p>
             <h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-[var(--foreground)] sm:text-4xl">
-              Market the install like a shortcut, not a workflow burden.
+              The advertised product now has a first Debian Linux build.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--muted)]">
-              This page positions Caesim as an easy local utility: install it,
-              define what should be removed from the library, and let the app
-              move those files into a cut folder for review.
+              Caesim v0.1.2 is available as a prototype release for
+              Debian-based Linux. Download it from GitHub, install it locally,
+              then run a dry scan with a supported rule before letting the app
+              move matching files into a cut folder for review.
             </p>
+            <a
+              href={prototypeReleaseUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex rounded-full border border-[var(--accent)]/45 px-5 py-3 text-sm font-medium text-[var(--accent-2)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)]/10"
+            >
+              Get v0.1.2 on GitHub
+            </a>
           </div>
 
           <div className="rounded-[1.5rem] border border-white/10 bg-[#111216] p-5">
             <div className="rounded-2xl bg-[#0a0b0f] p-5 font-mono text-sm text-[#d7d7d9]">
-              <p className="text-[var(--accent-2)]">$ npm install -g caesim</p>
+              <p className="text-[var(--accent-2)]">
+                $ download caesim v0.1.2 for Debian Linux
+              </p>
               <p className="mt-2">
-                $ caesim cut ./my-photos --rule &quot;screenshots&quot;
+                $ sudo apt install ./caesim_*.deb
+              </p>
+              <p className="mt-2">
+                $ caesim cut ./my-photos --rule screenshots --dry-run
+              </p>
+              <p className="mt-2">
+                $ caesim cut ./my-photos --rule screenshots
               </p>
             </div>
             <ol className="mt-6 space-y-4">
@@ -209,7 +239,7 @@ export default function Home() {
 
       <footer className="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-10 lg:px-12">
         <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>Caesim is not a product.</p>
+          <p>Caesim is a prototype for Debian-based Linux.</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
             <a
               href="https://next.trainvent.com"
