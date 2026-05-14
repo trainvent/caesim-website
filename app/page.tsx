@@ -250,10 +250,10 @@ export default function Home() {
               next.trainvent.com
             </a>
             <a
-              href="mailto:hello@trainvent.com"
+              href="mailto:info@trainvent.com"
               className="transition hover:text-[var(--foreground)]"
             >
-              hello@trainvent.com
+              info@trainvent.com
             </a>
           </div>
         </div>
