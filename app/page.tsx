@@ -19,6 +19,19 @@ const highlights = [
   "Fast to explain: define the property, run the cut, review the result.",
 ];
 
+const promptTiles = [
+  {
+    title: "Filter with image recognition",
+    shell: "caesim cut ./photos --find receipt --dry-run",
+    text: "Preview image-recognition matches before moving anything into the cut folder.",
+  },
+  {
+    title: "Custom Chatbot by backboard.io",
+    shell: "caesim ai-assist",
+    text: "Start the interactive assistant that turns cleanup requests into safe cut commands.",
+  },
+];
+
 const installSteps = [
   "Download the prototype release for Debian-based Linux and install it locally.",
   "Run a dry scan with one of Caesim's supported rules, such as screenshots, duplicates, blurry, dark, landscape, or portrait.",
@@ -58,7 +71,7 @@ export default function Home() {
               Cut clutter, keep control
             </p>
             <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-[var(--foreground)] sm:text-6xl lg:text-8xl">
-              Trim giant image libraries without sorting them by hand.
+              trim  a libary based on criteria
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
               Caesim started as a simple advertised idea: describe the kind of
@@ -123,7 +136,7 @@ export default function Home() {
 
                 <div className="mt-5 space-y-4 font-mono text-sm text-[#d7d7d9]">
                   <div className="rounded-2xl bg-[#0d0e12] p-4 text-[var(--accent-2)]">
-                    caesim cut ./photo-library --rule screenshots --dry-run
+                    caesim cut ./photo-library --rule screenshots
                   </div>
                   <div className="rounded-2xl border border-white/10 p-4">
                     supported rules: screenshots, duplicates, blurry, dark,
@@ -181,6 +194,25 @@ export default function Home() {
         id="install"
         className="mx-auto w-full max-w-7xl px-6 pb-20 pt-8 sm:px-10 lg:px-12"
       >
+        <div className="grid gap-6 pb-8 lg:grid-cols-2">
+          {promptTiles.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8"
+            >
+              <h2 className="mt-6 text-2xl font-medium text-[var(--foreground)]">
+                {item.title}
+              </h2>
+              <div className="mt-5 rounded-2xl bg-[#0a0b0f] p-4 font-mono text-sm text-[var(--accent-2)]">
+                {item.shell}
+              </div>
+              <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+                {item.text}
+              </p>
+            </article>
+          ))}
+        </div>
+
         <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--accent-2)]">
