@@ -39,7 +39,7 @@ const installSteps = [
 ];
 
 const prototypeReleaseUrl =
-  "https://github.com/trainvent/caesim/releases/tag/v0.1.2";
+  "https://github.com/trainvent/caesim/releases/latest";
 
 export default function Home() {
   return (
@@ -222,10 +222,10 @@ export default function Home() {
               The advertised product now has a first Debian Linux build.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--muted)]">
-              Caesim v0.1.2 is available as a prototype release for
-              Debian-based Linux. Download it from GitHub, install it locally,
-              then run a dry scan with a supported rule before letting the app
-              move matching files into a cut folder for review.
+              Caesim now has a prototype release for Debian-based Linux.
+              Download it from GitHub, install it locally, then run a dry scan
+              with a supported rule before letting the app move matching files
+              into a cut folder for review.
             </p>
             <a
               href={prototypeReleaseUrl}
@@ -233,17 +233,17 @@ export default function Home() {
               rel="noreferrer"
               className="mt-7 inline-flex rounded-full border border-[var(--accent)]/45 px-5 py-3 text-sm font-medium text-[var(--accent-2)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)]/10"
             >
-              Get v0.1.2 on GitHub
+              Get the latest release on GitHub
             </a>
           </div>
 
           <div className="rounded-[1.5rem] border border-white/10 bg-[#111216] p-5">
             <div className="rounded-2xl bg-[#0a0b0f] p-5 font-mono text-sm text-[#d7d7d9]">
               <p className="text-[var(--accent-2)]">
-                $ download caesim v0.1.2 for Debian Linux
+                $ download caesim for Debian Linux to the /tmp folder
               </p>
               <p className="mt-2">
-                $ sudo apt install ./caesim_*.deb
+                $ sudo apt install /tmp/caesim_*.deb
               </p>
               <p className="mt-2">
                 $ caesim cut ./my-photos --rule screenshots --dry-run
