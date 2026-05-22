@@ -26,7 +26,7 @@ const promptTiles = [
     text: "Preview image-recognition matches before moving anything into the cut folder.",
   },
   {
-    title: "Custom Chatbot by backboard.io",
+    title: "Custom Chatbot delivered by backboard.io",
     shell: "caesim ai-assist",
     text: "Start the interactive assistant that turns cleanup requests into safe cut commands.",
   },
