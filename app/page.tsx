@@ -26,7 +26,19 @@ const promptTiles = [
     text: "Preview image-recognition matches before moving anything into the cut folder.",
   },
   {
-    title: "Custom Chatbot delivered by backboard.io",
+    title: (
+      <span>
+        Custom Chatbot delivered by{' '}
+        <a
+          href="https://backboard.io/"
+          target="_blank"
+          rel="noreferrer"
+          className="transition hover:text-[var(--foreground)]"
+        >
+          backboard.io
+        </a>
+      </span>
+    ),
     shell: "caesim ai-assist",
     text: "Start the interactive assistant that turns cleanup requests into safe cut commands.",
   },
@@ -195,11 +207,11 @@ export default function Home() {
         className="mx-auto w-full max-w-7xl px-6 pb-20 pt-8 sm:px-10 lg:px-12"
       >
         <div className="grid gap-6 pb-8 lg:grid-cols-2">
-          {promptTiles.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-[2rem] border border-white/10 bg-white/5 p-8"
-            >
+          {promptTiles.map((item, index) => (
+              <article
+                key={index}
+                className="rounded-[2rem] border border-white/10 bg-white/5 p-8"
+              >
               <h2 className="mt-6 text-2xl font-medium text-[var(--foreground)]">
                 {item.title}
               </h2>
